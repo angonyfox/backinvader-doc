@@ -1,0 +1,8 @@
+site_name: BackInvader
+nav:
+  - Overview: index.md
+  - How-to Guide:
+      - Manage Data Bundle: bundle.md
+      - Run strategy: run.md
+theme:
+  name: material
