@@ -173,3 +173,5 @@ Apply parameter for plotting
 -p style="bar" -p filename="result"
 ```
 
+## Using configuration file
+yaml format
