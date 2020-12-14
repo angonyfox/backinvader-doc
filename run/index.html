@@ -1,0 +1,732 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.4.0">
+    
+    
+      
+        <title>Run strategy - BackInvader</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.fe0cca5b.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pass-parameter-from-command-line" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="BackInvader" class="md-header-nav__button md-logo" aria-label="BackInvader">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            BackInvader
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Run strategy
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="BackInvader" class="md-nav__button md-logo" aria-label="BackInvader">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    BackInvader
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      How-to Guide
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="How-to Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        How-to Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bundle/" title="Manage Data Bundle" class="md-nav__link">
+      Manage Data Bundle
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Run strategy
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Run strategy" class="md-nav__link md-nav__link--active">
+      Run strategy
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pass-parameter-from-command-line" class="md-nav__link">
+    Pass Parameter from command-line
+  </a>
+  
+    <nav class="md-nav" aria-label="Pass Parameter from command-line">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-data-source" class="md-nav__link">
+    Adding data source
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding data source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-data" class="md-nav__link">
+    Using --data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-bundle" class="md-nav__link">
+    Using --bundle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cerebro-options" class="md-nav__link">
+    Cerebro options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-strategy" class="md-nav__link">
+    Adding Strategy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-analyzer" class="md-nav__link">
+    Adding Analyzer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-observer" class="md-nav__link">
+    Adding Observer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotting" class="md-nav__link">
+    Plotting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-configuration-file" class="md-nav__link">
+    Using configuration file
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pass-parameter-from-command-line" class="md-nav__link">
+    Pass Parameter from command-line
+  </a>
+  
+    <nav class="md-nav" aria-label="Pass Parameter from command-line">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-data-source" class="md-nav__link">
+    Adding data source
+  </a>
+  
+    <nav class="md-nav" aria-label="Adding data source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-data" class="md-nav__link">
+    Using --data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-bundle" class="md-nav__link">
+    Using --bundle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cerebro-options" class="md-nav__link">
+    Cerebro options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-strategy" class="md-nav__link">
+    Adding Strategy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-analyzer" class="md-nav__link">
+    Adding Analyzer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-observer" class="md-nav__link">
+    Adding Observer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotting" class="md-nav__link">
+    Plotting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-configuration-file" class="md-nav__link">
+    Using configuration file
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>Run strategy</h1>
+                
+                <p>You can run strategy using <code>bi run</code></p>
+<ul>
+<li>pass parameter from command-line</li>
+<li>using configuration file</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Command Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c, --config CONFIG</td>
+<td>using CONFIG file to run</td>
+</tr>
+<tr>
+<td>--data name:kwargs, -d name:kwargs</td>
+<td>using GenericCSVData to add data</td>
+</tr>
+<tr>
+<td>--bundle name:kwargs</td>
+<td>using data bundle to add data</td>
+</tr>
+<tr>
+<td>--cerebro kwargs, -ce kwargs</td>
+<td>pass cerebro options</td>
+</tr>
+<tr>
+<td>--strategy module:name:kwargs, -st module:name:kwargs</td>
+<td>using strategy</td>
+</tr>
+<tr>
+<td>--analyzer module:name:kwargs, -an module:name:kwargs</td>
+<td>using analyzer</td>
+</tr>
+<tr>
+<td>--observer module:name:kwargs, -ob module:name:kwargs</td>
+<td>using observer</td>
+</tr>
+<tr>
+<td>--nostdstats</td>
+<td>Disable the standard statistics observers</td>
+</tr>
+<tr>
+<td>--cash CASH</td>
+<td>Cash to set to the broker</td>
+</tr>
+<tr>
+<td>--commission COMMISSION</td>
+<td>COMMISSION value to set</td>
+</tr>
+<tr>
+<td>--margin MARGIN</td>
+<td>MARGIN value to set</td>
+</tr>
+<tr>
+<td>--mult MULT</td>
+<td>Multiplier to use</td>
+</tr>
+<tr>
+<td>--interest INTEREST</td>
+<td>Credit Interest rate to apply (0.0x)</td>
+</tr>
+<tr>
+<td>--interest_long</td>
+<td>Apply credit interest to long positions</td>
+</tr>
+<tr>
+<td>--slip_perc SLIP_PERC</td>
+<td>Enable slippage with percentage value</td>
+</tr>
+<tr>
+<td>--slip_fixed SLIP_FIXED</td>
+<td>Enable slippage with a fixed point value</td>
+</tr>
+<tr>
+<td>--slip_open</td>
+<td>enable slippage for when matching opening prices</td>
+</tr>
+<tr>
+<td>--no-slip_match</td>
+<td>Disable slip_match, ie: matching capped at high-low if slippage goes over those limits</td>
+</tr>
+<tr>
+<td>--slip_out</td>
+<td>with slip_match enabled, match outside high-low</td>
+</tr>
+<tr>
+<td>--plot [kwargs]</td>
+<td>apply parameter for plotting</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pass-parameter-from-command-line">Pass Parameter from command-line</h2>
+<h3 id="adding-data-source">Adding data source</h3>
+<h4 id="using-data">Using --data</h4>
+<p>Data to be added to the system using GenericCSVData. This option can be specified multiple times.</p>
+<p>The argument can be specified with the following form <code>filename:kwargs</code></p>
+<p><code>kwargs</code> is optional.The available kwargs to bundle are:</p>
+<ul>
+<li>fromdate</li>
+<li>todate</li>
+<li>timeframe</li>
+<li>compression</li>
+<li>resample</li>
+<li>replay</li>
+<li>filter</li>
+</ul>
+<p><em>Example</em></p>
+<pre><code>-d /path/to/filename.csv:a=1,b=2
+</code></pre>
+
+<h4 id="using-bundle">Using --bundle</h4>
+<p>Data Bundle to be added to the system. This option can be specified multiple times.</p>
+<p>The argument can be specified with the following form <code>bundlename:kwargs</code></p>
+<p><code>kwargs</code> is optional.The available kwargs to bundle are:</p>
+<ul>
+<li>fromdate</li>
+<li>todate</li>
+<li>timeframe</li>
+<li>compression</li>
+<li>resample</li>
+<li>replay</li>
+<li>filter</li>
+</ul>
+<p>timeframe, resample and replay argument can be specified as 
+[ticks, microseconds, seconds, minutes, days, weeks, months, years]
+and [T, MS, S, M, D, W, MN, Y] with integer.
+For example, M5 is 5 mins</p>
+<p><strong>Example</strong></p>
+<pre><code>-b mybundle:a=1,b=2
+</code></pre>
+
+<h3 id="cerebro-options">Cerebro options</h3>
+<p>The passed kwargs will be passed directoly to the cerebro instance created for the execution</p>
+<p>The available kwargs to cerebro are:</p>
+<ul>
+<li>preload (default: True)</li>
+<li>runonce (default: True)</li>
+<li>maxcpus (default: None)</li>
+<li>stdstats (default: True)</li>
+<li>live (default: False)</li>
+<li>exactbars (default: False)</li>
+<li>writer (default False)</li>
+<li>oldbuysell (default False)</li>
+<li>tradehistory (default False)</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code>-ce preload=False
+
+For multiple kwargs:
+
+-ce preload=False -ce maxcpu=1
+</code></pre>
+
+<h3 id="adding-strategy">Adding Strategy</h3>
+<p>Using <code>--strategy</code> or <code>-st</code> to run strategy. This option can be specified multiple times.</p>
+<p>The argument can be specified with the following form <code>module.classname:kwargs</code></p>
+<p>kwargs is optional</p>
+<p>If module is omitted then class name will be sought in
+the built-in strategies module. Such as in <code>classname:kwargs</code> or <code>classname</code> </p>
+<p>module can specified as path to file (must ending with .py)
+that contain class definition <code>filepath:classname</code> or <code>filepath:classname:kwargs</code></p>
+<p><strong>Example</strong></p>
+<pre><code>-st mymod.myclass:a=1,b=2
+-st /strategy/mystrategyfile:MyStrategyClass:a=1,b=2
+</code></pre>
+
+<h3 id="adding-analyzer">Adding Analyzer</h3>
+<p>Using <code>--analyzer</code> or <code>-an</code> to add analyzer. This option can be specified multiple times.</p>
+<p>The argument can be specified with the following form <code>module.classname:kwargs</code></p>
+<p>kwargs is optional</p>
+<p>If module is omitted then class name will be sought in
+the built-in analyzers module. Such as in <code>classname:kwargs</code> or <code>classname</code> </p>
+<p>module can specified as path to file (must ending with .py)
+that contain class definition <code>filepath:classname</code> or <code>filepath:classname:kwargs</code></p>
+<p><strong>Example</strong></p>
+<pre><code>-an SQN
+-an mymod.myclass:a=1,b=2
+-an /analyzer/myanalyzerfile:MyAnalyzerClass:a=1,b=2
+</code></pre>
+
+<h3 id="adding-observer">Adding Observer</h3>
+<p>Using <code>--observer</code> or <code>-ob</code> to add observer. This option can be specified multiple times.</p>
+<p>The argument can be specified with the following form <code>module.classname:kwargs</code></p>
+<p>kwargs is optional</p>
+<p>If module is omitted then class name will be sought in
+the built-in observers module. Such as in <code>classname:kwargs</code> or <code>classname</code> </p>
+<p>module can specified as path to file (must ending with .py)
+that contain class definition <code>filepath:classname</code> or <code>filepath:classname:kwargs</code></p>
+<p><strong>Example</strong></p>
+<pre><code>-ob DrawDown
+-ob mymod.myclass:a=1,b=2
+-ob /observer/myobserverfile:MyObserverClass:a=1,b=2
+</code></pre>
+
+<h3 id="plotting">Plotting</h3>
+<p>Apply parameter for plotting</p>
+<ul>
+<li>style: [bar, line] to plot candlesticks/line</li>
+<li>plot_mode: [single, tabs] to generate single/tabs page</li>
+<li>output_dir: directory to write report</li>
+<li>filename: report name</li>
+</ul>
+<p><strong>Example</strong></p>
+<pre><code>--plot style=&quot;bar&quot;
+-p style=&quot;bar&quot; -p filename=&quot;result&quot;
+</code></pre>
+
+<h2 id="using-configuration-file">Using configuration file</h2>
+<p>yaml format</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../bundle/" title="Manage Data Bundle" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Manage Data Bundle
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
